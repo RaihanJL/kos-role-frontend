@@ -13,7 +13,7 @@ const ForgotPassword = () => {
     setMessage("");
     setError("");
     try {
-      const res = await axios.post("http://localhost:5000/forgot-password", {
+      const res = await axios.post("https://kos-role-production.up.railway.app/forgot-password", {
         email,
       });
       setMessage(res.data.message);
