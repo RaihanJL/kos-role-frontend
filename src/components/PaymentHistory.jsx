@@ -148,12 +148,12 @@ const PaymentHistory = () => {
                   <td>
                     {pay.proof ? (
                       <a
-                        href={`http://localhost:5000/uploads/${pay.proof}`}
+                        href={`https://kos-role-production.up.railway.app/uploads/${pay.proof}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={`http://localhost:5000/uploads/${pay.proof}`}
+                          src={`https://kos-role-production.up.railway.app/uploads/${pay.proof}`}
                           alt="Bukti"
                           className="proof-img"
                         />
