@@ -31,7 +31,7 @@ const Welcome = () => {
     if (user.role === "admin") {
       // Fetch semua user
       axios
-        .get("http://localhost:5000/users", {
+        .get("https://kos-role-production.up.railway.app/users", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
@@ -55,7 +55,7 @@ const Welcome = () => {
 
       // Fetch semua pembayaran
       axios
-        .get("http://localhost:5000/payments/admin", {
+        .get("https://kos-role-production.up.railway.app/payments/admin", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
@@ -80,14 +80,14 @@ const Welcome = () => {
         });
     } else {
       axios
-        .get("http://localhost:5000/payments/current-month", {
+        .get("https://kos-role-production.up.railway.app/current-month", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => setStatus(res.data))
         .catch(() => setStatus(null));
 
       axios
-        .get(`http://localhost:5000/users/${user.uuid}/arrears`, {
+        .get(`https://kos-role-production.up.railway.app/users/${user.uuid}/arrears`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
@@ -98,7 +98,7 @@ const Welcome = () => {
         .catch(() => setArrears([]));
 
       axios
-        .get("http://localhost:5000/payments", {
+        .get("https://kos-role-production.up.railway.app/payments", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => setLastPayments(res.data.slice(0, 3)))
