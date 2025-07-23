@@ -40,7 +40,7 @@ const EditProfile = () => {
     setLoading(true);
     try {
       await axios.patch(
-        "http://localhost:5000/users/me",
+        "https://kos-role-production.up.railway.app/users/me",
         {
           name: form.name,
           email: form.email,
