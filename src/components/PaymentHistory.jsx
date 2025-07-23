@@ -16,7 +16,7 @@ const PaymentHistory = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/payments", {
+        const res = await axios.get("https://kos-role-production.up.railway.app/payments", {
           withCredentials: true, // <-- tambahkan ini
         });
         setPayments(res.data);
