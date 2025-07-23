@@ -30,7 +30,7 @@ const Payments = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/payments/current-month", {
+      .get("https://kos-role-production.up.railway.app/payments/current-month", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -48,7 +48,7 @@ const Payments = () => {
   useEffect(() => {
     if (user) {
       axios
-        .get(`http://localhost:5000/users/${user.id}/arrears`)
+        .get(`https://kos-role-production.up.railway.app/users/${user.id}/arrears`)
         .then((res) => setArrears(res.data))
         .catch(() => setArrears(null));
     }
@@ -70,7 +70,7 @@ const Payments = () => {
       formData.append("proof", proof);
       formData.append("userId", user.id);
       await axios.post(
-        "http://localhost:5000/payments/pay-multiple",
+        "https://kos-role-production.up.railway.app/payments/pay-multiple",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -94,7 +94,7 @@ const Payments = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/payments", formData, {
+      await axios.post("https://kos-role-production.up.railway.app/payments", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setMessage("Pembayaran berhasil diajukan!");
