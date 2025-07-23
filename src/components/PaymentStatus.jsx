@@ -12,7 +12,7 @@ const StatusPembayaranBulanan = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/payments", {
+        const res = await axios.get("https://kos-role-production.up.railway.app/payments", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
