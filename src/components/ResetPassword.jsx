@@ -16,7 +16,7 @@ const ResetPassword = () => {
     setError("");
     try {
       const res = await axios.post(
-        `http://localhost:5000/reset-password/${token}`,
+        `https://kos-role-production.up.railway.app/reset-password/${token}`,
         {
           password,
           confPassword,
