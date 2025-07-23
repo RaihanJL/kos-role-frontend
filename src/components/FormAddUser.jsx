@@ -32,7 +32,7 @@ const FormAddUser = () => {
         roomType: role === "admin" ? "-" : roomType,
         roomPrice: role === "admin" ? 0 : roomPrice,
       };
-      await axios.post("http://localhost:5000/users", data);
+      await axios.post("https://kos-role-production.up.railway.app/users", data);
       setSuccessMsg(
         `Berhasil menambah ${role === "admin" ? "admin" : "user"} baru!`
       );
