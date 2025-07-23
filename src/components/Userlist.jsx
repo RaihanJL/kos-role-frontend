@@ -13,7 +13,7 @@ const Userlist = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/users");
+    const response = await axios.get("https://kos-role-production.up.railway.app/users");
     const all = response.data;
     setUsers(all.filter((u) => u.role === "user"));
     setAdmins(all.filter((u) => u.role === "admin"));
@@ -27,7 +27,7 @@ const Userlist = () => {
       } ini?`
     );
     if (!confirmDelete) return;
-    await axios.delete(`http://localhost:5000/users/${userId}`);
+    await axios.delete(`https://kos-role-production.up.railway.app/users/${userId}`);
     setNotif(
       `${user?.role === "admin" ? "Admin" : "User"} "${
         user?.name
@@ -43,7 +43,7 @@ const Userlist = () => {
       `Yakin ingin mengubah status user ini menjadi "${newStatus}"?`
     );
     if (!confirm) return;
-    await axios.patch(`http://localhost:5000/users/${user.uuid}/status`, {
+    await axios.patch(`https://kos-role-production.up.railway.app/users/${user.uuid}/status`, {
       status: newStatus,
     });
     getUsers();
