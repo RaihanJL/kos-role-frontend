@@ -32,7 +32,7 @@ const AdminPayments = () => {
   const fetchPayments = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("https://kos-role-production.up.railway.app/admin");
+      const res = await axios.get("https://kos-role-production.up.railway.app/payments/admin");
       setPayments(res.data);
     } catch (error) {
       setPayments([]);
@@ -43,7 +43,7 @@ const AdminPayments = () => {
 
   const handleValidate = async (uuid, status) => {
     try {
-      await axios.patch(`https://kos-role-production.up.railway.app/${uuid}`, { status });
+      await axios.patch(`https://kos-role-production.up.railway.app/payments/${uuid}`, { status });
       setMessage("Status pembayaran diperbarui");
       fetchPayments();
     } catch (error) {
