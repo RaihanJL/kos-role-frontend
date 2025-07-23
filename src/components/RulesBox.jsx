@@ -9,7 +9,7 @@ const RulesBox = ({ isAdmin, boxStyle }) => {
 
   useEffect(() => {
     const fetchRules = async () => {
-      const res = await axios.get("http://localhost:5000/rules");
+      const res = await axios.get("https://kos-role-production.up.railway.app/rules");
       setRules(res.data?.content || "");
     };
     fetchRules();
@@ -23,7 +23,7 @@ const RulesBox = ({ isAdmin, boxStyle }) => {
   const handleSave = async () => {
     try {
       await axios.put(
-        "http://localhost:5000/rules",
+        "https://kos-role-production.up.railway.app/rules",
         { content: editValue },
         { withCredentials: true }
       );
