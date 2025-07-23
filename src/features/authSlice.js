@@ -16,7 +16,9 @@ export const LoginUser = createAsyncThunk(
       const response = await axios.post("https://kos-role-production.up.railway.app/login", {
         email: user.email,
         password: user.password,
-      });
+      },
+        { withCredentials: true }
+    );
       return response.data;
     } catch (error) {
       if (error.response) {
@@ -31,17 +33,21 @@ export const RegisterUser = createAsyncThunk(
   "user/RegisterUser",
   async (user, thunkAPI) => {
     try {
-      const response = await axios.post("https://kos-role-production.up.railway.app/users", {
-        name: user.name,
-        email: user.email,
-        phone: user.phone,
-        address: user.address,
-        password: user.password,
-        confPassword: user.confPassword,
-        roomType: user.roomType,
-        roomPrice: user.roomPrice,
-        roomNumber: user.roomNumber, // <-- TAMBAHKAN INI!
-      });
+      const response = await axios.post(
+        "https://kos-role-production.up.railway.app/users",
+        {
+          name: user.name,
+          email: user.email,
+          phone: user.phone,
+          address: user.address,
+          password: user.password,
+          confPassword: user.confPassword,
+          roomType: user.roomType,
+          roomPrice: user.roomPrice,
+          roomNumber: user.roomNumber,
+        },
+        { withCredentials: true } // <-- tambahkan ini
+      );
       return response.data;
     } catch (error) {
       if (error.response) {
@@ -54,7 +60,10 @@ export const RegisterUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   try {
-    const response = await axios.get("https://kos-role-production.up.railway.app/me");
+    const response = await axios.get(
+      "https://kos-role-production.up.railway.app/me",
+      { withCredentials: true } // <-- tambahkan ini
+    );
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -65,7 +74,10 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async () => {
-  await axios.delete("https://kos-role-production.up.railway.app/logout");
+  await axios.delete(
+    "https://kos-role-production.up.railway.app/logout",
+    { withCredentials: true } // <-- tambahkan ini
+  );
 });
 
 export const authSlice = createSlice({
