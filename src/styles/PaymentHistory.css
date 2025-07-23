@@ -1,0 +1,272 @@
+body,
+.layout-root {
+  background: #f9fbfd;
+  color: #232b36;
+}
+
+.layout-sidebar {
+  background: #f5f8fd;
+  border-right: 1.5px solid #e3e7ef;
+}
+
+.menu-label {
+  color: #1976d2;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.menu-list li a.active,
+.menu-list li a:focus,
+.menu-list li a:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.tag.is-success {
+  background: #43a047;
+  color: #fff;
+}
+
+.payment-history-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #b3c2e022;
+  padding: 32px 20px 24px 20px;
+  margin-top: 24px;
+}
+
+.payment-status-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  background: #f9fbfd;
+  box-shadow: 0 2px 12px #b3c2e022;
+}
+
+/* Table style */
+.modern-status-table {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  min-width: 700px;
+  box-shadow: 0 2px 8px #b3c2e022;
+}
+
+.modern-status-table th,
+.modern-status-table td {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: none;
+}
+
+.modern-status-table th {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.modern-status-table td {
+  background: #fff;
+  color: #232b36;
+  vertical-align: middle;
+}
+
+.payment-history-room {
+  font-weight: 600;
+  color: #1976d2;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.payment-status-nominal {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.payment-status-penalty {
+  color: #d90429;
+  font-weight: 600;
+  background: #fff3e0;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 15px;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+.payment-status-total {
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.payment-status-status {
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 8px;
+  padding: 6px 18px;
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.proof-img {
+  max-width: 80px;
+  max-height: 80px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #e3e7ef;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.custom-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0 0;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.custom-page,
+.custom-prev,
+.custom-next {
+  display: inline-block;
+  list-style: none;
+}
+
+.custom-prev a,
+.custom-next a {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-page a,
+.custom-prev a,
+.custom-next a {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: #f5f7fa;
+  color: #1976d2;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-size: 0.95rem;
+}
+
+.custom-page a:hover,
+.custom-prev a:hover,
+.custom-next a:hover {
+  background: #e3eafc;
+}
+
+.is-current a,
+.is-current {
+  background: #3273dc;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .modern-status-table th,
+  .modern-status-table td {
+    font-size: 13px;
+    padding: 8px 6px;
+  }
+  .payment-history-container {
+    padding: 10px 2px 8px 2px;
+  }
+  .modern-status-table {
+    min-width: 600px;
+  }
+  .proof-img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  .custom-pagination {
+    font-size: 0.9rem;
+  }
+}
+
+.modern-status-table tbody tr:hover {
+  background: #f5f8fd;
+  transition: background 0.2s;
+}
+
+/* Table border radius on top */
+.modern-status-table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+.modern-status-table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Print styles tetap */
+.print-table {
+  display: none;
+}
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .print-table,
+  .print-table * {
+    visibility: visible !important;
+  }
+  .print-table {
+    display: block !important;
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90vw !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    z-index: 9999;
+  }
+  #root,
+  .box,
+  .payment-history-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+  }
+  .print-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    width: 90vw !important;
+    margin: 32px auto 0 auto !important;
+    padding: 0 24px !important;
+    background: #fff !important;
+    position: static !important;
+    float: none !important;
+  }
+  .print-footer div {
+    visibility: visible !important;
+  }
+}
