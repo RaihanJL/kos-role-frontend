@@ -160,6 +160,10 @@ const Payments = () => {
           }}
         >
           <span>
+            Tanggal Jatuh Tempo:{" "}
+            <span style={{ color: "#1976d2" }}>5</span>
+          </span>
+          <span>
             Nomor Kamar:{" "}
             <span style={{ color: "#1976d2" }}>{user?.roomNumber || "-"}</span>
           </span>
